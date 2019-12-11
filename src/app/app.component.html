@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <tj-side-nav [routes]="routes" (sidenavClose)="sidenav.close()"></tj-side-nav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <tj-header [routes]="routes" (sidenavToggle)="sidenav.toggle()"></tj-header>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
